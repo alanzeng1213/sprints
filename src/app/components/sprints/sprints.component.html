@@ -1,3 +1,66 @@
-<h1>
-  Test........................
-</h1>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div style="margin-top: 80px">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Prints List</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">New Print</a></li>
+
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">
+
+
+      <table class="table table-striped">
+        <tr>
+          <td>Length</td>
+          <td>Status</td>
+          <td>Date</td>
+          <td>Start</td>
+          <td>Finish</td>
+          <td>Description</td>
+        </tr>
+
+        <tr *ngFor = "let item of posts; let i =index ">
+
+          <td>{{item.length}}</td>
+          <td>{{ item.status}}</td>
+          <td>{{ item.data}}</td>
+          <td>{{ item.start}} </td>
+          <td>{{ item.finish}} </td>
+          <td>{{item.description }}</td>
+      </tr>
+
+      </table>
+
+    </div>
+
+
+    <div role="tabpanel" class="tab-pane" id="profile">This is for create new sprints
+
+      {{alan}}
+
+
+     <hr><br>
+     <circle-progress
+        percent= 30
+        [radius]="100"
+        [outerStrokeWidth]="16"
+        [innerStrokeWidth]="8"
+        [outerStrokeColor]="'#78C000'"
+        [innerStrokeColor]="'#C7E596'"
+        [animation]="true"
+        [animationDuration]="300"
+></circle-progress>
+
+
+    </div>
+
+  </div>
+
+</div>

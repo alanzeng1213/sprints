@@ -10,7 +10,12 @@ import { CallbackComponent } from './components/callback/callback.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AuthService } from './components/auth/auth.service';
 import { SprintsComponent } from './components/sprints/sprints.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {CdkTableModule} from '@angular/cdk/table';
+import { FormsModule  } from '@angular/forms';
+import 'rxjs/RX';
+import { HttpClientModule } from '@angular/common/http';  // IgxIconModule,
+import { NgCircleProgressModule } from 'ng-circle-progress';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,8 +27,22 @@ import { SprintsComponent } from './components/sprints/sprints.component';
     SprintsComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    CdkTableModule,
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: '#78C000',
+      innerStrokeColor: '#C7E596',
+      animationDuration: 300,
+    })
+
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
