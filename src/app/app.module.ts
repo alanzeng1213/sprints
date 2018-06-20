@@ -16,6 +16,8 @@ import { FormsModule  } from '@angular/forms';
 import 'rxjs/RX';
 import { HttpClientModule } from '@angular/common/http';  // IgxIconModule,
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { ZengtempComponent } from './components/zengtemp/zengtemp.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,9 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     AuthComponent,
     CallbackComponent,
     HeaderComponent,
-    SprintsComponent
+    SprintsComponent,
+    ZengtempComponent,
+
   ],
   imports: [
     FormsModule,

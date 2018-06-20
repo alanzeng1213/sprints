@@ -16,7 +16,7 @@ export class AuthService {
     redirectUri: 'http://localhost:4200/callback',
     scope: 'openid'
   });
- //  jhghgjhgjh
+
   constructor(public router: Router) {}
 
   public login(): void {

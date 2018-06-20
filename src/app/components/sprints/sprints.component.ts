@@ -14,7 +14,7 @@ import { Router , NavigationExtras  } from '@angular/router';
 export class SprintsComponent implements OnInit  , OnDestroy {
 
   constructor(public postService: PostService , private router: Router) { }
-  alan = 35;
+  pro_value = 22;
   posts = [] ;
    private postsSub: Subscription;
 
@@ -29,7 +29,7 @@ export class SprintsComponent implements OnInit  , OnDestroy {
   ];
 
   public selectedValue: any;
-
+  public timePromise: any;
   value = 0;
   selectOne: any = '';
 
@@ -63,6 +63,31 @@ export class SprintsComponent implements OnInit  , OnDestroy {
   }
   ngOnDestroy() {
     this.postsSub.unsubscribe();
+
+  }
+
+
+  //  process bar .......
+
+
+  start () {
+  //   alert(num + '--' + tagname);
+
+  this.timePromise = setInterval(    // 5s run to 100
+    (success) => {
+      this.pro_value = this.pro_value + 1 ;
+      if (this.pro_value >= 100) {
+       // this.endHours = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
+       window.clearInterval(this.timePromise);
+
+      //  this.postService.addSprint(len, 'Completed' , this.date , this.hours , this.endHours, this.desc);
+      //   this.router.navigate(['/sprint'] );
+      } else {
+      }
+    }, 50);
+
+
   }
 
 }
+

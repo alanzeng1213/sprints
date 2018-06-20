@@ -2,6 +2,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
+
+
+
 <div style="margin-top: 80px">
 
   <!-- Nav tabs -->
@@ -41,14 +44,49 @@
     </div>
 
 
-    <div role="tabpanel" class="tab-pane" id="profile">This is for create new sprints
-
-      {{alan}}
+    <div role="tabpanel" class="tab-pane" id="profile">This is for create new sprints222  --  {{pro_value}}
 
 
-     <hr><br>
+        <div class="card1"  >
+            <form action="" (submit)="onAddPost(postForm2)" #postForm2="ngForm">
+            <div class="card-body">
+                <h3 style="text-align: center">Start a sprint!</h3><br>
+                <p _ngcontent-c9="">
+                    &nbsp; <label  style="font-size: 12px ; color: grey">Choose length*</label>
+
+                    <select [(ngModel)]="selectedValue" class="form-control" style="height: 35px;" name="length">
+
+                        <option *ngFor="let sp of sprints" [value]="sp.value">{{sp.viewValue}}</option>
+                     </select>
+
+                  </p>
+
+                  <p>
+                      &nbsp; <label  style="font-size: 12px ; color: grey">Please enter a description*</label>
+                      <input type="text" name ="description" ngModel required #title="ngModel" class="form-control"   style="height: 35px;">
+
+                  </p>
+
+                  <p>
+                      <label>
+                          <input type="checkbox" value="">&nbsp;
+                          <span style="font-size: 13px; color: grey">Notifications disabled by browser</span>
+                        </label>
+
+                  </p>
+
+                  <p style="text-align: center">
+
+                      <button type="submit" class="btn btn-success"  style="width: 100px">Start</button>
+                  </p>
+
+            </div>
+            </form>
+          </div>
+
+        <!--
      <circle-progress
-        percent= 30
+        percent= {{pro_value}}
         [radius]="100"
         [outerStrokeWidth]="16"
         [innerStrokeWidth]="8"
@@ -57,10 +95,11 @@
         [animation]="true"
         [animationDuration]="300"
 ></circle-progress>
-
+-->
 
     </div>
 
   </div>
 
 </div>
+

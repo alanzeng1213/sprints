@@ -5,12 +5,16 @@ import { ProfileComponent } from './components/profile/profile.component';
 
 import { SprintsComponent } from './components/sprints/sprints.component';
 
+import { ZengtempComponent } from './components/zengtemp/zengtemp.component';
+
 const routes: Routes = [
 
   {path: 'sprints' , component: SprintsComponent},
   {path: 'profile' , component: ProfileComponent},
+  {path: 'zeng' , component: ZengtempComponent},
   {path: '' , component: HomeComponent},
-  { path: '**', component: HomeComponent }
+  { path: '**', component: HomeComponent },
+
 ];
 
 @NgModule({
