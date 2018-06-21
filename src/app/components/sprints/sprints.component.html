@@ -5,7 +5,7 @@
 
 
 
-<div style="margin-top: 80px">
+<div style="margin-top: 20px">
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
@@ -16,9 +16,18 @@
 
   <!-- Tab panes -->
   <div class="tab-content">
+
+
+
     <div role="tabpanel" class="tab-pane active" id="home">
 
+        <div style="text-align: center ; margin-top: 30px ">
 
+            <input type="text" style="width: 400px ; height: 35px; border-style: none;border-bottom-style: solid
+
+            ; outline:none;
+            " class="myinput" placeholder="Filter by length, status, date or description"  [(ngModel)] = "term">
+        </div><br>
       <table class="table table-striped">
         <tr>
           <td>Length</td>
@@ -29,7 +38,7 @@
           <td>Description</td>
         </tr>
 
-        <tr *ngFor = "let item of posts; let i =index ">
+        <tr *ngFor = "let item of posts| filter:term  ">
 
           <td>{{item.length}}</td>
           <td>{{ item.status}}</td>
@@ -41,10 +50,37 @@
 
       </table>
 
+
+
+      <!-- paging start -->
+
+        <div style="text-align: right">
+
+            <ngb-pagination [collectionSize]="120" [(page)]="page" [maxSize]="5" [boundaryLinks]="true"></ngb-pagination>
+
+
+            <hr>
+
+            <pre>Current page: {{page}}</pre>
+        </div>
+      <!-- paging end -->
+
+
+ <br><br><br><br>
+      <p style="text-align: center">
+        <button id ="bg" type="button" class="btn btn-link"  style="color: red; font-size: 20px" (click)="deleteAll()">
+          Delete all data
+        </button>
+      </p>
+<br><br>
+  <p style="text-align: center">
+      <span style="font-style: italic; font-size: 16px; color: grey">Logged in as {{log_email}}</span>
+  </p>
+
     </div>
 
 
-    <div role="tabpanel" class="tab-pane" id="profile">This is for create new sprints222  --  {{pro_value}}
+    <div role="tabpanel" class="tab-pane" id="profile">.
 
 
         <div class="card1"  >
@@ -74,7 +110,7 @@
                         </label>
 
                   </p>
-
+                  <br>
                   <p style="text-align: center">
 
                       <button type="submit" class="btn btn-success"  style="width: 100px">Start</button>
@@ -84,18 +120,10 @@
             </form>
           </div>
 
-        <!--
-     <circle-progress
-        percent= {{pro_value}}
-        [radius]="100"
-        [outerStrokeWidth]="16"
-        [innerStrokeWidth]="8"
-        [outerStrokeColor]="'#78C000'"
-        [innerStrokeColor]="'#C7E596'"
-        [animation]="true"
-        [animationDuration]="300"
-></circle-progress>
--->
+          <p style="text-align: center ; margin-top: 400px">
+              <span style="font-style: italic; font-size: 16px; color: grey">Logged in as {{log_email}}</span>
+          </p>
+
 
     </div>
 

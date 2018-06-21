@@ -11,7 +11,7 @@ const routes: Routes = [
 
   {path: 'sprints' , component: SprintsComponent},
   {path: 'profile' , component: ProfileComponent},
-  {path: 'zeng' , component: ZengtempComponent},
+  {path: 'alan' , component: ZengtempComponent},
   {path: '' , component: HomeComponent},
   { path: '**', component: HomeComponent },
 

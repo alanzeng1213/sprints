@@ -17,6 +17,8 @@ import 'rxjs/RX';
 import { HttpClientModule } from '@angular/common/http';  // IgxIconModule,
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ZengtempComponent } from './components/zengtemp/zengtemp.component';
+import { FilterPipe } from './filter.pipe';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { ZengtempComponent } from './components/zengtemp/zengtemp.component';
     HeaderComponent,
     SprintsComponent,
     ZengtempComponent,
+    FilterPipe,
 
   ],
   imports: [
@@ -37,6 +40,7 @@ import { ZengtempComponent } from './components/zengtemp/zengtemp.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     CdkTableModule,
+    NgbModule.forRoot(),
     NgCircleProgressModule.forRoot({
       // set defaults here
       radius: 100,

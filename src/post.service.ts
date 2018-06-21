@@ -68,6 +68,15 @@ export class PostService {
     });
   }
 
+  deleteAllPost() {
+
+    this.http.delete('http://localhost:3000/api/posts/').subscribe(() => {
+      console.log('Deleted!!!!');
+      this.getPosts();
+
+    });
+  }
+
   getPostUpdateListener() {
     return this.postUpdated.asObservable();
   }
