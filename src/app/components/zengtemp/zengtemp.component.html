@@ -1,3 +1,72 @@
+<link rel="stylesheet" href="http://localhost:4200/assets/circle.css" >
+
+
+
+<h1>show data ---{{pro_value}}</h1><br>
+
+<div class="page">
+
+
+
+
+  <div class="clearfix">
+
+      <div class="c100 p{{pro_value}} big">
+
+          <span>{{pro_value}}%</span>
+          <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+          </div>
+      </div>
+
+
+
+  </div>
+  <br>
+
+
+  <button type="button" class="btn btn-success" (click) ="timerStop()" style="margin-left: 7%; width: 110px">Stop</button>
+
+
+
+<!--
+  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"
+   style=" margin-left: 6%;width: 110px"  (click) ="Stop()">
+      Stop
+    </button>
+
+</div>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">ON hold. Cancal sprint?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click) ="cancle()">Close</button>
+          <button type="button" class="btn btn-danger" (click) ="timerStop()">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  -->
+<!--
+<circle-progress
+percent= {{pro_value}}
+[radius]="100"
+
+[animation]="true"
+[animationDuration]="300"
+></circle-progress>
+-->
 
 
 

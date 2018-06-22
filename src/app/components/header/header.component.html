@@ -1,10 +1,10 @@
-<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #3a5fcd">
+<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #3a5fcd ; height: 65px;">
   <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
       <ul class="navbar-nav mr-auto">
 
           <li class="nav-item active">
               <a class="nav-link" href="#">
-                <img src="../assets/logo.png" style="width: 100px" alt="">
+                <img src="../assets/logo.png" style="width: 95px" alt="">
 
               </a>
           </li>
@@ -12,7 +12,7 @@
       </ul>
   </div>
   <div class="mx-auto order-0"  style="position: absolute; left: 45%">
-      <a class="navbar-brand mx-auto" href="#">Sprint</a>
+      <a class="navbar-brand mx-auto" href="#">≡Sprint</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
           <span class="navbar-toggler-icon"></span>
       </button>
@@ -20,15 +20,15 @@
   <div class="navbar-collapse collapse w-100 order-3 dual-collapse2 " style="margin-left: 80%">
       <ul class="navbar-nav ml-auto" style="left: 100px">
           <li class="nav-item">
-                <a class="nav-link" href="#" routerLink="/sprints" *ngIf="auth.isAuthenticated()">Sprints</a>
+                <a class="nav-link" href="#" routerLink="/sprints" *ngIf="auth.isAuthenticated()" style="color:white; font-size: 18px">Sprints</a>
 
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#" *ngIf="!auth.isAuthenticated()" (click)="auth.login()" >login</a>
+              <a class="nav-link" href="#" *ngIf="!auth.isAuthenticated()" (click)="auth.login()" style="color:white; font-size: 18px">login</a>
           </li>
 
-          <li class="nav-item">
-              <a class="nav-link" href="#" *ngIf="auth.isAuthenticated()" (click)="auth.logout()" >Logout</a>
+          <li class="nav-item"  >
+              <a class="nav-link" href="#" *ngIf="auth.isAuthenticated()" (click)="auth.logout()" style="color:white; font-size: 18px" >Logout</a>
           </li>
       </ul>
   </div>
