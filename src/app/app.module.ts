@@ -19,8 +19,11 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ZengtempComponent } from './components/zengtemp/zengtemp.component';
 import { FilterPipe } from './filter.pipe';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+<<<<<<< HEAD
 
 import { PushNotificationsModule  } from 'ng-push';
+=======
+>>>>>>> 0130c3e2f2bea12bce1d6f43108edb8d10dca7da
 
 @NgModule({
   declarations: [
@@ -42,8 +45,11 @@ import { PushNotificationsModule  } from 'ng-push';
     AppRoutingModule,
     BrowserAnimationsModule,
     CdkTableModule,
+<<<<<<< HEAD
     PushNotificationsModule,
 
+=======
+>>>>>>> 0130c3e2f2bea12bce1d6f43108edb8d10dca7da
     NgbModule.forRoot(),
     NgCircleProgressModule.forRoot({
       // set defaults here

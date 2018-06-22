@@ -17,8 +17,12 @@ import { Router , NavigationExtras  } from '@angular/router';
 })
 
 export class SprintsComponent implements OnInit  , OnDestroy   {
+<<<<<<< HEAD
 
   page = 1;
+=======
+  page = 4;
+>>>>>>> 0130c3e2f2bea12bce1d6f43108edb8d10dca7da
   term: any = '' ;
   log_email = '';
   constructor(public postService: PostService , private router: Router) { }
@@ -38,7 +42,11 @@ export class SprintsComponent implements OnInit  , OnDestroy   {
     {value: '3600', viewValue: 'Very long (60min)'},
   ];
 
+<<<<<<< HEAD
   collectionSize ;
+=======
+
+>>>>>>> 0130c3e2f2bea12bce1d6f43108edb8d10dca7da
   public selectedValue: any;
   public timePromise: any;
   value = 0;
@@ -53,6 +61,7 @@ export class SprintsComponent implements OnInit  , OnDestroy   {
 
   onAddPost(form2: NgForm) {
 
+<<<<<<< HEAD
     // if (form2.invalid) {
     //   alert('please innput description');
     //   return;
@@ -62,6 +71,10 @@ export class SprintsComponent implements OnInit  , OnDestroy   {
 
     if (form2.value.length === '') {
       alert('please choose length');
+=======
+    if (form2.invalid) {
+      alert('please innput description');
+>>>>>>> 0130c3e2f2bea12bce1d6f43108edb8d10dca7da
       return;
     }
 
@@ -85,9 +98,12 @@ export class SprintsComponent implements OnInit  , OnDestroy   {
   }
 
   ngOnInit() {
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 0130c3e2f2bea12bce1d6f43108edb8d10dca7da
     this.log_email = localStorage.getItem('email');
     console.log(this.posts);
     this.postService.getPosts();
@@ -104,10 +120,14 @@ export class SprintsComponent implements OnInit  , OnDestroy   {
 
   }
 
+<<<<<<< HEAD
   pagechange () {
     alert(this.collectionSize);
 
   }
+=======
+
+>>>>>>> 0130c3e2f2bea12bce1d6f43108edb8d10dca7da
 
 }
 

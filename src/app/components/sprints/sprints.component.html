@@ -22,9 +22,15 @@
     <div role="tabpanel" class="tab-pane active" id="home">
 
         <div style="text-align: center ; margin-top: 30px ">
+<<<<<<< HEAD
 
             <input type="text" style="width: 400px ; height: 35px; border-style: none;border-bottom-style: solid
 
+=======
+
+            <input type="text" style="width: 400px ; height: 35px; border-style: none;border-bottom-style: solid
+
+>>>>>>> 0130c3e2f2bea12bce1d6f43108edb8d10dca7da
             ; outline:none;
             " class="myinput" placeholder="Filter by length, status, date or description"  [(ngModel)] = "term">
         </div><br>
@@ -53,6 +59,7 @@
 
 
       <!-- paging start -->
+<<<<<<< HEAD
       <hr>
         <div style="text-align: right" *ngIf="show">
 
@@ -62,6 +69,17 @@
 
 
            <!-- <pre>Current page: {{page}}</pre>-->
+=======
+
+        <div style="text-align: right">
+
+            <ngb-pagination [collectionSize]="120" [(page)]="page" [maxSize]="5" [boundaryLinks]="true"></ngb-pagination>
+
+
+            <hr>
+
+            <pre>Current page: {{page}}</pre>
+>>>>>>> 0130c3e2f2bea12bce1d6f43108edb8d10dca7da
         </div>
       <!-- paging end -->
 
