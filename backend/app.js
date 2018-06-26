@@ -1,9 +1,8 @@
 
 const experss = require('express');
-
 const bodyParser = require('body-parser');
 
-const Post = require('./models/post');
+const postsRoutes = require("./routes/sprints");
 
 const mongoose = require('mongoose');
 const session = require('express-session');
@@ -19,24 +18,10 @@ app.use(session({
   rolling: true
 }))
 
-
-
-
-
-
 app.use(function(req,res,next){
- // if (req.url =='/')
-
-console.log(req.url);
-
-// var localStorage = new LocalStorage('http://localhost:4200');
-//localStorage.setItem('userToken', req.body.userToken)//if you are sending token.
-// console.log(localStorage.getItem('id_token'));
-// localStorage.getItem('email');
+// console.log(req.url);
 next();
-
 });
-
 
 app.use(experss.static ('assets'));
 
@@ -57,64 +42,6 @@ app.use((req,res,next) => {
   next();
 });
 
-
-app.post("/api/posts" ,(req,res,next) =>{
-
-    // const post =req.body;
-    const post =new Post({
-
-      length: req.body.length,
-      status: req.body.status,
-      data: req.body.data,
-      start: req.body.start,
-      finish: req.body.finish,
-      description: req.body.description
-
-    });
-
-    post.save();
-
-    res.status(201).json({
-      message:'Post added successfully222'
-
-    });
-});
-
-
-app.delete('/api/posts/:id', (req,res ,next ) => {
-
-Post.deleteOne({_id: req.params.id }).then(result => {
- // console.log("!!!!:"+req.params.id);
- //s console.log(result);
-  res.status(200).json({message:"Post deleted!!!"});
-});
-
-});
-
-
-app.delete('/api/posts', (req,res ,next ) => {
-
-  console.log('delete all data2!!!!');
-
-  Post.deleteMany().then(result => {
-   // console.log("!!!!:"+req.params.id);
-   //s console.log(result);
-    res.status(200).json({message:"All Post deleted!!!"});
-  });
-
-  });
-
-app.get('/api/posts',(req,res, next) =>{  // zhongjian jie
-
-    Post.find().then(data =>{
-    //  console.log(data);
-     res.status(200).json({
-      message: 'Post fetched success!!2',
-      posts : data
-    });
-    });
-
-
-});
+app.use("/api/posts",postsRoutes);
 
 module.exports = app;

@@ -14,8 +14,10 @@ export class ZengtempComponent implements OnInit {
   constructor(private pushNotifications: PushNotificationsService , public postService: PostService ,
      private router: Router , private routeActive: ActivatedRoute  ) { }
 
-     currentStateName = 'Finished!!!';
-  pro_value = 0;
+     // tslint:disable-next-line:no-inferrable-types
+     currentStateName: string = 'Finished!!!';
+  // tslint:disable-next-line:no-inferrable-types
+  pro_value: number = 0;
   public timePromise: any;
 
 
@@ -28,7 +30,8 @@ export class ZengtempComponent implements OnInit {
 
   date: any  = new Date().getFullYear() + '-' + this.d + '-' + new Date().getDate();
   hours =  new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds();
-  endHours = '';
+  // tslint:disable-next-line:no-inferrable-types
+  endHours: string = '';
 
   timer(len2) {
 

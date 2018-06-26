@@ -19,28 +19,19 @@ export class PostService {
 
   private posts: any = [];
   private postUpdated = new Subject();
-  getPosts() {
-
-    this.http.get<{message: string , posts: string}>('http://localhost:3000/api/posts')
+  getPosts(postsPerPage: number , currentPage: number) {
+    const quertParams = `?pageSize=${postsPerPage}&page=${currentPage}`;
+    this.http.get<{message: string , posts: string , count: number}>('http://localhost:3000/api/posts' + quertParams)
     .pipe()
     .subscribe((postData) => {
+
       this.posts = postData.posts;
-      this.postUpdated.next([...this.posts]);
+      this.postUpdated.next(postData.count);
+      this.postUpdated.next(this.posts);
     });
 
   }
 
-  addPost(_title: string , _content: string) {
-    const post = {id: null , title: _title, content: _content };
-
-    this.http.post<{message: string}>('http://localhost:3000/api/posts', post)
-    .subscribe(responseData => {
-      console.log(responseData.message);
-      this.posts.push(post);
-      this.postUpdated.next([...this.posts]);   // send data to out
-    });
-
-  }
 
 
   addSprint(length: string , status: string , data: string , start: string , finish: string , description: string) {
@@ -57,22 +48,11 @@ export class PostService {
   }
 
 
-
-
-  deletePost(postId: string) {
-    console.log('@@@:' + postId);
-    this.http.delete('http://localhost:3000/api/posts/' + postId).subscribe(() => {
-      console.log('Deleted!!!!');
-      this.getPosts();
-
-    });
-  }
-
   deleteAllPost() {
 
     this.http.delete('http://localhost:3000/api/posts/').subscribe(() => {
       console.log('Deleted!!!!');
-      this.getPosts();
+     this.getPosts(5, 1);
 
     });
   }

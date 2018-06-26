@@ -18,14 +18,18 @@ import { Router , NavigationExtras  } from '@angular/router';
 
 export class SprintsComponent implements OnInit  , OnDestroy   {
 
-  page = 1;
-  term: any = '' ;
-  log_email = '';
-  constructor(public postService: PostService , private router: Router) { }
-  pro_value = 22;
-  posts = [] ;
-   show ;
 
+  // tslint:disable-next-line:no-inferrable-types
+  page: number = 1;
+  term: any = '' ;
+  // tslint:disable-next-line:no-inferrable-types
+  log_email: string = '';
+  constructor(public postService: PostService , private router: Router) { }
+  // tslint:disable-next-line:no-inferrable-types
+  pro_value: number = 22;
+  posts: any = [] ;
+   show ;
+  totalcount: any = 0;
    private postsSub: Subscription;
 
    sprints = [
@@ -38,18 +42,17 @@ export class SprintsComponent implements OnInit  , OnDestroy   {
     {value: '3600', viewValue: 'Very long (60min)'},
   ];
 
-  collectionSize ;
+
   public selectedValue: any;
   public timePromise: any;
-  value = 0;
+  // tslint:disable-next-line:no-inferrable-types
+  value: number = 0;
   selectOne: any = '';
 
   s_str: any  = 0;
-  changeClient() {
-    alert(11);
-   // this.selectOne = event.target.value;
-  }
 
+// tslint:disable-next-line:no-inferrable-types
+num: number = 0;
 
   onAddPost(form2: NgForm) {
 
@@ -70,13 +73,11 @@ export class SprintsComponent implements OnInit  , OnDestroy   {
       return;
     }
 
-    console.log('11111111');
-    console.log(form2.value);
-    let NavigationExtras : NavigationExtras = {
+    const navigationExtras: NavigationExtras = {
       queryParams : {'description' :  form2.value.description , 'length' : form2.value.length },
       fragment : 'anchor'
   };
-    this.router.navigate(['/alan'] , NavigationExtras);
+    this.router.navigate(['/alan'] , navigationExtras);
 
   }
 
@@ -89,11 +90,22 @@ export class SprintsComponent implements OnInit  , OnDestroy   {
 
 
     this.log_email = localStorage.getItem('email');
-    console.log(this.posts);
-    this.postService.getPosts();
+
+    this.postService.getPosts(5, 1);
     this.postsSub = this.postService.getPostUpdateListener().subscribe((data: any) => {
-      this.posts = data;
-      this.show = this.posts.length > 5 ? true : false;
+
+      if (this.num === 0 ) {
+        this.totalcount = data;
+      }
+      if (this.num === 1 ) {
+        this.posts = data;
+      }
+    this.posts = data;
+     // this.show = this.posts.length > 4 ? true : false;
+    this.num++;
+
+
+
   });
 
 
@@ -105,8 +117,9 @@ export class SprintsComponent implements OnInit  , OnDestroy   {
   }
 
   pagechange () {
-    alert(this.page);
 
+   console.log(this.page);
+   this.postService.getPosts(5, this.page);
   }
 
 }

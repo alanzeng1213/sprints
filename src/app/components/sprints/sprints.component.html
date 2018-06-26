@@ -54,9 +54,9 @@
 
       <!-- paging start -->
       <hr>
-        <div style="text-align: right" *ngIf="show">
-
-            <ngb-pagination [collectionSize]="120" [(page)]="page" [maxSize]="5" [boundaryLinks]="true" (pageChange)="pagechange()"></ngb-pagination>
+        <!-- <div style="text-align: right" *ngIf="show"> -->
+          <div style="text-align: right"  >
+            <ngb-pagination [collectionSize]="totalcount" [(page)]="page" [maxSize]="5" [boundaryLinks]="true" (pageChange)="pagechange()"></ngb-pagination>
 
 
 
@@ -74,7 +74,7 @@
       </p>
 <br><br>
   <p style="text-align: center">
-      <span style="font-style: italic; font-size: 16px; color: grey">Logged in as {{log_email}}</span>
+      <span style="font-style: italic; font-size: 16px; color: grey">Logged in as {{log_email}} </span>
   </p>
 
     </div>
@@ -125,7 +125,7 @@
           </div>
 
           <p style="text-align: center ; margin-top: 400px">
-              <span style="font-style: italic; font-size: 16px; color: grey">Logged in as {{log_email}}</span>
+              <span style="font-style: italic; font-size: 16px; color: grey">Logged in as{{log_email}} </span>
           </p>
 
 
