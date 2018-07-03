@@ -1,0 +1,78 @@
+swagger: '2.0'
+info:
+  version: v1
+  title: Sprint
+  description: fist swagger api poject
+host: localhost:3000
+basePath: /
+paths:
+  "/api/posts":
+    get:
+      tags:
+      - Sprints
+      operationId: sprint_get
+      consumes: []
+      produces:
+      - application/json
+      - text/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              "$ref": "#/definitions/Sprint"
+      deprecated: false
+
+
+    post:
+      tags:
+      - Sprints
+      operationId: "addSprint"
+      summary: "Add a new Sprint to the Sprints"
+
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/Sprint"
+      responses:
+        405:
+          description: "Invalid input"
+
+    delete:
+
+
+      summary: "Deletes a spirnts"
+      description: ""
+      operationId: "deleteSprint"
+      produces:
+      - "application/xml"
+      - "application/json"
+
+      responses:
+        400:
+          description: "Invalid ID supplied"
+        404:
+          description: "Sprints not found"
+
+
+
+definitions:
+  Sprint:
+    type: object
+    properties:
+      id:
+        format: int32
+        type: integer
+      length:
+        type: string
+      description:
+        type: string

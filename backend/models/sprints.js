@@ -3,12 +3,12 @@ const mongoose =require('mongoose');
 
 const postSchema = mongoose.Schema({
 
-  length: { type: String , require:true},
-  status: { type: String , require:true},
-  data: { type: String , require:true},
-  start: { type: String , require:true},
-  finish: { type: String , require:true},
-  description: { type: String , require:true}
+  length: { type: String , required:true},
+  status: { type: String , required:true},
+  data: { type: String , required:true},
+  start: { type: String , required:true},
+  finish: { type: String , required:true},
+  description: { type: String , required:true}
 
 });
 

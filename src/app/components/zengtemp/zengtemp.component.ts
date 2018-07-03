@@ -132,7 +132,7 @@ export class ZengtempComponent implements OnInit {
 
     this.routeActive.queryParams.subscribe (params => {
       this.length = params['length'];
-      console.log(params );
+
       this.desc = params['description'];
 
     });
