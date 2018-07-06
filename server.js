@@ -50,3 +50,36 @@ const server = http.createServer(app);
 server.on("error", onError);
 server.on("listening", onListening);
 server.listen(port);
+
+
+
+var graylog2 = require("graylog2");
+
+var logger = new graylog2.graylog({
+  servers: [
+
+    { 'host': '127.0.0.1', port: 12201 },{ 'host': '127.0.0.2',
+     port: 12201 } ],
+
+    hostname: 'server.name',
+    facility: 'Node.js',
+    bufferSize: 1350
+  });
+
+
+logger.on('error', function (error) {
+  console.error('Error while trying to write to graylog2:',error);
+});
+
+logger.log("What we've got here is...failure to communicate");
+
+var graylog = require('graylog-loging');
+
+graylog.init({
+  graylogPort: 12201,
+  graylogHostname: '192.0.0.1'
+});
+
+app.use(graylog.logRequest);
+app.use(graylog.logResponse);
+app.use(graylog.handleErrors)

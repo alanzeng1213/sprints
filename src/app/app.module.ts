@@ -21,7 +21,7 @@ import { FilterPipe } from './filter.pipe';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { PushNotificationsModule  } from 'ng-push';
-
+import { graylog2 } from 'graylog2';
 @NgModule({
   declarations: [
     AppComponent,
